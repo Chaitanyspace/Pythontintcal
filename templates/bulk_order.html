@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add Bulk Order Windows</h2>
+<form id="bulkOrderForm" class="my-4">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="bulkWidth" class="form-label">Window Width:</label>
+            <input type="number" class="form-control" id="bulkWidth" placeholder="Width">
+        </div>
+        <div class="col-md-6">
+            <label for="bulkHeight" class="form-label">Window Height:</label>
+            <input type="number" class="form-control" id="bulkHeight" placeholder="Height">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="bulkQuantity" class="form-label">Total Quantity:</label>
+            <input type="number" class="form-control" id="bulkQuantity" placeholder="Total Quantity">
+        </div>
+        <div class="col-md-6">
+            <label for="bulkRate" class="form-label">Rate per sqm ($):</label>
+            <input type="number" class="form-control" id="bulkRate" placeholder="Rate per sqm">
+        </div>
+    </div>
+    <div class="text-center">
+        <button type="button" class="btn btn-secondary btn-sm" onclick="addBulkOrder()">Add Bulk</button>
+    </div>
+</form>
+<table class="table table-striped" id="resultsTable">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Width</th>
+        <th>Height</th>
+        <th>Quantity</th>
+        <th>Area (sqm)</th>
+        <th>Cost ($)</th>
+    </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+</table>
+{% endblock %}

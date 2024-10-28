@@ -1,10 +1,24 @@
 function addCustomWindow() {
+    // Access the elements by ID for custom windows
+    const width = document.getElementById("width").value;
+    const height = document.getElementById("height").value;
+    const quantity = document.getElementById("quantity").value;
+    const rate = document.getElementById("rate").value;
+    const unit = document.getElementById("unit").value;
+
+    // Check if any field is empty
+    if (!width || !height || !quantity || !rate) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Package data for the request
     const data = {
-        width: document.getElementById("width").value,
-        height: document.getElementById("height").value,
-        quantity: document.getElementById("quantity").value,
-        rate: document.getElementById("rate").value,
-        unit: document.getElementById("unit").value
+        width: width,
+        height: height,
+        quantity: quantity,
+        rate: rate,
+        unit: unit
     };
 
     fetch('/calculate', {
@@ -20,12 +34,26 @@ function addCustomWindow() {
 }
 
 function addBulkOrder() {
+    // Access the elements by ID for bulk orders
+    const width = document.getElementById("bulkWidth").value;
+    const height = document.getElementById("bulkHeight").value;
+    const quantity = document.getElementById("bulkQuantity").value;
+    const rate = document.getElementById("bulkRate").value;
+    const unit = document.getElementById("unit").value;
+
+    // Check if any field is empty
+    if (!width || !height || !quantity || !rate) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Package data for the request
     const data = {
-        width: document.getElementById("bulkWidth").value,
-        height: document.getElementById("bulkHeight").value,
-        quantity: document.getElementById("bulkQuantity").value,
-        rate: document.getElementById("bulkRate").value,
-        unit: document.getElementById("unit").value
+        width: width,
+        height: height,
+        quantity: quantity,
+        rate: rate,
+        unit: unit
     };
 
     fetch('/calculate', {
